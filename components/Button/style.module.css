@@ -1,0 +1,18 @@
+.button {
+    cursor: pointer;
+    background-color: greenyellow;
+    padding: 10px 15px;
+    color: black;
+    border-radius: 10px;
+    transition: 300ms;
+    font-weight: bold;
+}
+
+.button:hover{
+    background-color: green;
+    color: white;
+}
+
+.button:active{
+    font-size: 0.8rem;
+}

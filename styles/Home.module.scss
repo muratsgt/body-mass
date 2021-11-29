@@ -1,0 +1,41 @@
+.container,
+.main,
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 0 2rem;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: 4rem 2vw;
+  justify-content: space-around;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  span{
+    font-size: 1.5rem;
+    padding-left: 20px;
+  }
+
+  input {
+    width: 300px;
+  }
+}
+
+.footer {
+  padding: 1rem 0;
+  margin-top: auto;
+  border-top: 1px solid #ddd;
+}
+
+.rangebar {}
