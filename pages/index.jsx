@@ -64,8 +64,8 @@ export default function Home() {
         <div>
           <h1>What is your BMI? </h1>
           <h2>(body mass index)<span className={styles.tooltip}> ⓘ
-            <h4>What does the index mean?</h4>
-            <h3>0 - 18: Underweight <br />
+            <h3> <b>What does the index mean?</b> <br />
+              0 - 18: Underweight <br />
               18 – 25: Healthy Weight <br />
               25 – 30: Overweight <br />
               30 - 99: Obesity</h3>
