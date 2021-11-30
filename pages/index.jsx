@@ -51,7 +51,7 @@ export default function Home() {
           isOn={ismetric}
           handleToggle={() => setMetric(!ismetric)}
         />
-        <Image alt="title" src="/fit.png" width={100} height={100}></Image>
+        <Image alt="title" src="/fit2.png" width={100} height={100}></Image>
         <div>
           <h1>What is your BMI?</h1>
           <h2>(body mass index)</h2>
@@ -67,7 +67,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        Created by Murat @ MIT
+        designed by <a href="https://muratakca.vercel.app/">makca</a>
       </footer>
     </div>
   )
