@@ -30,7 +30,6 @@ function ResultModal({ isOn, result, children, onClose, ...props }) {
         const tempObj = bmiset ? [currentObj, ...bmiset] : [currentObj];
         setbmiset(tempObj);
         localStorage.setItem("bmiset", JSON.stringify(tempObj));
-        console.log(`tempObj`, tempObj)
     }
 
     const cleanStorage = () => {
@@ -46,7 +45,7 @@ function ResultModal({ isOn, result, children, onClose, ...props }) {
                         result < 18.5 && <h3 color="yellow">its time to eat 🙂</h3> ||
                         result < 25 && <Image alt="ok"
                             src="/ok.png" width={50} height={50}></Image> ||
-                        result < 30 && <h3 color="yellow">its time to move 🏃‍♂️🏃‍♀️</h3> ||
+                        result < 30 && <h3 color="yellow">its time for physical activity 🏃‍♂️🏃‍♀️</h3> ||
                         result < 100 && <h3 color="red">time to start a new diet 🍅🥦</h3>
                     }
                     <h2>Your body mass index is</h2>

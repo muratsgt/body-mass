@@ -24,7 +24,7 @@
     font-weight: bold;
   }
 
-  h2{
+  h2 {
     font-size: 1.3rem;
   }
 }
@@ -37,7 +37,31 @@
   flex-direction: row;
   font-size: 0.8rem;
   white-space: pre-wrap;
-  a{
+
+  a {
     font-size: 0.8rem;
+  }
+}
+
+.tooltip {
+  position: relative;
+  h3 {
+    visibility: hidden;
+    background-color: #fff;
+    border: 1px solid black;
+    color: black;
+    text-align: left;
+    padding: 5px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    top: 5px;
+    right: 100%;
+    width: 200px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 17;
+  }
+  &:hover h3{
+    visibility: visible;
   }
 }

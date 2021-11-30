@@ -6,7 +6,7 @@
     padding-left: 20px;
 }
 
-.box p{
+.box p {
     text-align: left;
     display: inline-block;
     width: 4rem;
@@ -14,6 +14,112 @@
     margin-left: 20px;
 }
 
-.box input {
+.box > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box input[type=range] {
+    height: 42px;
+    -webkit-appearance: none;
+    margin: 10px 2px;
     width: 300px;
+}
+
+.box input[type=range]:focus {
+    outline: none;
+}
+
+.box input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 1px 1px 3px #000000;
+    background: #74A9D8;
+    border-radius: 2px;
+    border: 0px solid #010101;
+}
+
+.box input[type=range]::-webkit-slider-thumb {
+    box-shadow: 2px 2px 3px #000031;
+    border: 1px solid #00001E;
+    height: 33px;
+    width: 33px;
+    border-radius: 19px;
+    background: #FFFFFF;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -11px;
+}
+
+.box input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #74A9D8;
+}
+
+.box input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 1px 1px 3px #000000;
+    background: #74A9D8;
+    border-radius: 2px;
+    border: 0px solid #010101;
+}
+
+.box input[type=range]::-moz-range-thumb {
+    box-shadow: 2px 2px 3px #000031;
+    border: 1px solid #00001E;
+    height: 33px;
+    width: 33px;
+    border-radius: 19px;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.box input[type=range]::-ms-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+.box input[type=range]::-ms-fill-lower {
+    background: #74A9D8;
+    border: 0px solid #010101;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px #000000;
+}
+
+.box input[type=range]::-ms-fill-upper {
+    background: #74A9D8;
+    border: 0px solid #010101;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px #000000;
+}
+
+.box input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 2px 2px 3px #000031;
+    border: 1px solid #00001E;
+    height: 33px;
+    width: 33px;
+    border-radius: 19px;
+    background: #FFFFFF;
+    cursor: pointer;
+}
+
+.box input[type=range]:focus::-ms-fill-lower {
+    background: #74A9D8;
+}
+
+.box input[type=range]:focus::-ms-fill-upper {
+    background: #74A9D8;
 }

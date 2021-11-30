@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import Button from '../components/Button'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ResultModal from '../components/ResultModal'
 import { MetricHeight, MetricWeight, ImperialWeight, ImperialHeight } from '../components/InputBars'
 import Switch from '../components/SwitchButton'
@@ -14,6 +14,13 @@ export default function Home() {
   const [ismetric, setMetric] = useState(true);
 
   let bmi = 10000 * myW / (myH * myH);
+
+  useEffect(() => {
+    const lastW = localStorage.getItem("lastW");
+    const lastH = localStorage.getItem("lastH");
+    lastW && setMyW(lastW);
+    lastH && setMyH(lastH);
+  }, [])
 
   const onClose = () => {
     setModalOn(false);
@@ -37,6 +44,8 @@ export default function Home() {
 
   const handleClick = () => {
     setModalOn(true);
+    localStorage.setItem("lastW", myW);
+    localStorage.setItem("lastH", myH);
   }
 
   return (
@@ -53,8 +62,14 @@ export default function Home() {
         />
         <Image alt="title" src="/fit2.png" width={100} height={100}></Image>
         <div>
-          <h1>What is your BMI?</h1>
-          <h2>(body mass index)</h2>
+          <h1>What is your BMI? </h1>
+          <h2>(body mass index)<span className={styles.tooltip}> ⓘ
+            <h4>What does the index mean?</h4>
+            <h3>0 - 18: Underweight <br />
+              18 – 25: Healthy Weight <br />
+              25 – 30: Overweight <br />
+              30 - 99: Obesity</h3>
+          </span> </h2>
         </div>
         {ismetric ? <MetricHeight myH={myH} changeH={changeH}></MetricHeight>
           : <ImperialHeight myH={myH} changeH={changeH}></ImperialHeight>
