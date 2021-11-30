@@ -1,0 +1,19 @@
+.numinput {
+    border: none;
+    outline: none;
+    max-width: 5rem;
+    font-size: 1.5rem;
+    padding-left: 20px;
+}
+
+.box p{
+    text-align: left;
+    display: inline-block;
+    width: 4rem;
+    font-size: 1.5rem;
+    margin-left: 20px;
+}
+
+.box input {
+    width: 300px;
+}

@@ -4,11 +4,15 @@ import styles from '../styles/Home.module.scss'
 import Button from '../components/Button'
 import { useState } from 'react'
 import ResultModal from '../components/ResultModal'
+import { MetricHeight, MetricWeight, ImperialWeight, ImperialHeight } from '../components/InputBars'
+import Switch from '../components/SwitchButton'
 
 export default function Home() {
   const [myW, setMyW] = useState(70);
   const [myH, setMyH] = useState(170);
   const [modalOn, setModalOn] = useState(false);
+  const [ismetric, setMetric] = useState(true);
+
   let bmi = 10000 * myW / (myH * myH);
 
   const onClose = () => {
@@ -16,11 +20,19 @@ export default function Home() {
   }
 
   const changeH = (e) => {
-    setMyH(e.target.value);
+    if (e.target.id === "imH") {
+      setMyH(e.target.value * 2.54)
+    }
+    else
+      setMyH(e.target.value);
   }
 
   const changeW = (e) => {
-    setMyW(e.target.value);
+    if (e.target.name === "imW") {
+      setMyW(e.target.value / 2.205);
+    } else {
+      setMyW(e.target.value);
+    }
   }
 
   const handleClick = () => {
@@ -34,52 +46,22 @@ export default function Home() {
         <meta name="description" content="A simple tool to calculate your ideal weight" />
         <link rel="icon" href="/health.ico" />
       </Head>
-
       <main className={styles.main}>
+        <Switch
+          isOn={ismetric}
+          handleToggle={() => setMetric(!ismetric)}
+        />
         <Image alt="title" src="/fit.png" width={100} height={100}></Image>
-        <h1>What is your BMI?</h1>
         <div>
-          <h2>Your Height (cm)</h2>
-          <input
-            value={myH}
-            onChange={changeH}
-            type="range"
-            name="height"
-            id="height"
-            min={140}
-            max={220}
-          />
-          <input
-            className={styles.numinput}
-            value={myH}
-            onChange={changeH}
-            min={140}
-            max={220}
-            type="number"
-            name="height2"
-            id="height2" />
+          <h1>What is your BMI?</h1>
+          <h2>(body mass index)</h2>
         </div>
-        <div>
-          <h2>Your Weight (kg)</h2>
-          <input
-            value={myW}
-            onChange={changeW}
-            type="range"
-            name="weight"
-            id="weight"
-            min={40}
-            max={200}
-          />
-          <input
-            className={styles.numinput}
-            value={myW}
-            onChange={changeW}
-            type="number"
-            name="weight2"
-            id="weight2"
-            min={40}
-            max={200}/>
-        </div>
+        {ismetric ? <MetricHeight myH={myH} changeH={changeH}></MetricHeight>
+          : <ImperialHeight myH={myH} changeH={changeH}></ImperialHeight>
+        }
+        {ismetric ? <MetricWeight myW={myW} changeW={changeW}></MetricWeight>
+          : <ImperialWeight myW={myW} changeW={changeW}></ImperialWeight>
+        }
         <Button onClick={handleClick}>Hit me!</Button>
         <ResultModal isOn={modalOn} result={bmi} onClose={onClose}></ResultModal>
       </main>

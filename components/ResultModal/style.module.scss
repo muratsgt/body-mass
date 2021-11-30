@@ -33,6 +33,17 @@
     h2 {
         font-size: 1.5rem;
     }
+    h3 {
+        // font-style: italic;
+        font-weight: 300;
+    }
+
+    h3[color="red"]{
+        background-color: #ffcdd2;
+    }
+    h3[color="yellow"]{
+        background-color: #fff9c4;
+    }
 }
 
 .goback {
