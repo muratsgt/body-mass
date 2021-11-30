@@ -77,7 +77,7 @@ export default function Home() {
         {ismetric ? <MetricWeight myW={myW} changeW={changeW}></MetricWeight>
           : <ImperialWeight myW={myW} changeW={changeW}></ImperialWeight>
         }
-        <Button onClick={handleClick}>Hit me!</Button>
+        <Button onClick={handleClick}>Calculate</Button>
         <ResultModal isOn={modalOn} result={bmi} onClose={onClose}></ResultModal>
       </main>
 
