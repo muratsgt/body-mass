@@ -12,8 +12,8 @@ https://bodymassindex-xi.vercel.app
 - Saves your last seven scores
 
 ## Screenshots
-![scrn1](/forreadme/capture1.png)
-![scrn2](/forreadme/capture2.png)
+![scrn1](capture1.png)
+![scrn2](capture2.png)
 
 
 ## Contribute
